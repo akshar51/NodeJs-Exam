@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 require('dotenv').config()
 const db = require('./config/db')
+const cookieParser = require('cookie-parser')
 
 const port = process.env.PORT || 4000
 const app = express()
@@ -9,6 +10,7 @@ const app = express()
 app.set('view engine','ejs')
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static('public'))
+app.use(cookieParser())
 
 app.use('/',require('./routers/index.route'))
 

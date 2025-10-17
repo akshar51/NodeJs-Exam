@@ -52,7 +52,7 @@ exports.login = async (req,res)=>{
                 if(user.role == 'admin'){
                     res.redirect('/')
                 }else{
-                    res.redirect('/viewArticle')
+                    res.redirect('/myArticle')
                 }
 
             } else {
