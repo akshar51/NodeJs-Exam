@@ -4,7 +4,6 @@ const userAuth = require("../middleware/auth");
 const router = Router()
 
 router.get('/',Ctl.homePage)
-router.get('/dashboard',Ctl.dashPage)
 router.get('/register',Ctl.registerPage)
 router.get('/login',Ctl.loginPage)
 router.post('/register',Ctl.register)

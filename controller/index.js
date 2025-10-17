@@ -8,10 +8,6 @@ exports.loginPage = (req,res)=>{
     res.render('./pages/login')
 }
 
-exports.dashPage = (req,res)=>{
-    res.render('./pages/index')
-}
-
 exports.registerPage = (req,res)=>{
     res.render('./pages/register')
 }
