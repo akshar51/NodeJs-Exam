@@ -14,5 +14,7 @@ router.post('/login',Ctl.login)
 router.post('/myArticle',Ctl.article)
 
 router.get('/delete/:id',Ctl.deleteArticle)
+router.get('/edit/:id',Ctl.editArticle)
+router.post('/update/:id',Ctl.updateArticle)
 
 module.exports = router

@@ -98,3 +98,25 @@ exports.deleteArticle = async (req,res)=>{
         res.redirect(req.get('Referrer')|| '/')
     }
 }
+
+exports.editArticle = async (req,res)=>{
+    try {
+        let {id} = req.params
+        let article = await Article.findById(id)
+        res.render('./pages/editArticle',{article})
+    } catch (error) {
+        console.log(error.message)
+        res.render('./pages/editArticle',{article:[]})
+    }
+}
+
+exports.updateArticle = async (req,res)=>{
+    try {
+        let {id} = req.params
+        await Article.findByIdAndUpdate(id,req.body,{new:true})
+        res.redirect('/viewArticle')
+    } catch (error) {
+        console.log(error.message)
+        res.redirect('/viewArticle')
+    }
+}
